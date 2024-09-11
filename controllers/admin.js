@@ -11,7 +11,11 @@ exports.postCrearProducto = (req, res, next) => {
 };
 
 exports.getProductos = (req, res, next) => {
-  Producto.fetchAll(productos => {
-    res.render('tienda/lista-productos', {prods: productos, titulo: 'La Tienda', path: '/'});
-  });
-};
+    Producto.fetchAll(productos => {
+      res.render('admin/productos', {
+        prods: productos,
+        titulo: 'Admin Productos',
+        path: '/admin/productos'
+      });
+    });
+  };
