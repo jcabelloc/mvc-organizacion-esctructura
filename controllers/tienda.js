@@ -24,6 +24,13 @@ exports.getCarrito = (req, res, next) => {
   });
 };
 
+exports.getPedidos = (req, res, next) => {
+  res.render('tienda/pedidos', {
+    path: '/pedidos',
+    titulo: 'Mis Pedidos'
+  });
+};
+
 exports.getCheckout = (req, res, next) => {
   res.render('tienda/checkout', {
     path: '/checkout',
