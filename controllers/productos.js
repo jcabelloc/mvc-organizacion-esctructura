@@ -1,7 +1,7 @@
 const Producto = require('../models/producto');
 
 exports.getCrearProducto = (req, res, next) => {
-  res.render('crear-producto', { titulo: 'Crear Producto', path: '/admin/crear-producto' });
+  res.render('admin/crear-producto', { titulo: 'Crear Producto', path: '/admin/crear-producto' });
 };
 
 exports.postCrearProducto = (req, res, next) => {
@@ -12,6 +12,6 @@ exports.postCrearProducto = (req, res, next) => {
 
 exports.getProductos = (req, res, next) => {
   Producto.fetchAll(productos => {
-    res.render('tienda', {prods: productos, titulo: 'La Tienda', path: '/'});
+    res.render('tienda/lista-productos', {prods: productos, titulo: 'La Tienda', path: '/'});
   });
 };
