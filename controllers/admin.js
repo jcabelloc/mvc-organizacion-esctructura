@@ -5,7 +5,11 @@ exports.getCrearProducto = (req, res, next) => {
 };
 
 exports.postCrearProducto = (req, res, next) => {
-  const producto = new Producto(req.body.nombre);
+  const nombre = req.body.nombre;
+  const urlImagen = req.body.urlImagen;
+  const precio = req.body.precio;
+  const descripcion = req.body.descripcion;
+  const producto = new Producto(nombre, urlImagen, descripcion, precio);
   producto.save();
   res.redirect('/')
 };
